@@ -1,0 +1,47 @@
+spring:
+  http:
+    encoding: #解决浏览器中返回json显示乱码问题
+      charset: utf-8
+      enabled: true
+      force: true
+  application:
+    name: example-service
+  rabbitmq:
+    host: 119.29.94.246
+    port: 5672
+    username: dev
+    password: dev
+  security:
+    user:
+      name: dev
+      password: dev
+  datasource:
+    url: jdbc:mysql://119.29.94.246:3306/hbn_demo?characterEncoding=utf8
+    username: dev
+    password: dev
+    driverClassName: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      javax:
+        persistence:
+          validation:
+            mode: auto
+
+server:
+  port: 8888
+  servlet:
+    context-path: /example_service
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/eureka/
