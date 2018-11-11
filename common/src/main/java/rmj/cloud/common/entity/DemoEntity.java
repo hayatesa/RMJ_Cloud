@@ -1,4 +1,4 @@
-package rmj.cloud.provider.domain;
+package rmj.cloud.common.entity;
 
 @Entity
 @Table(name = "demo_entity")

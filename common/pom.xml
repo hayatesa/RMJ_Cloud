@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>eureka</artifactId>
+    <artifactId>common</artifactId>
     <version>1.0.0.RELEASE</version>
     <packaging>jar</packaging>
 
-    <name>eureka</name>
-    <description>eureka</description>
+    <name>common</name>
+    <description>Common</description>
 
     <parent>
         <groupId>rmj.cloud</groupId>
@@ -16,7 +16,15 @@
         <version>1.0.0.RELEASE</version>
     </parent>
 
-    <dependencies>
-    </dependencies>
+    <modules>
+        <module>../example-invoker</module>
+        <module>../example-provider</module>
+        <module>../service-discovery-eureka</module>
+        <module>../service-discovery-zookeeper</module>
+    </modules>
+
+
+
+
 
 </project>

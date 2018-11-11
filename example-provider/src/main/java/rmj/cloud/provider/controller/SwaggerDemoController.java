@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import rmj.cloud.provider.util.ResultMap;
+import rmj.cloud.provider.util.ResultObject;
 
 @RestController
 @RequestMapping(path = "api", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -24,9 +24,9 @@ public class SwaggerDemoController {
     @ApiOperation(value = "根据id查询学生信息", notes = "查询数据库中某个的学生信息")
     @ApiImplicitParam(name = "id", value = "学生ID", paramType = "path", required = true, dataType = "Integer")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResultMap getStudent(@PathVariable int id) {
+    public ResultObject getStudent(@PathVariable int id) {
         logger.info("开始查询某个学生信息");
-        return ResultMap.success();
+        return ResultObject.success();
     }
 
 

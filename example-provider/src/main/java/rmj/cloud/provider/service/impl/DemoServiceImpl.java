@@ -3,7 +3,7 @@ package rmj.cloud.provider.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import rmj.cloud.provider.domain.DemoEntity;
+import rmj.cloud.common.entity.DemoEntity;;
 import rmj.cloud.provider.repository.DemoRepository;
 import rmj.cloud.provider.service.IDemoService;
 

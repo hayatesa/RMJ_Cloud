@@ -7,7 +7,8 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
-import rmj.cloud.provider.util.ResultMap;
+import org.springframework.web.bind.annotation.*;
+import rmj.cloud.provider.util.ResultObject;
 import springfox.documentation.annotations.ApiIgnore;
 
 @RestController
@@ -20,9 +21,9 @@ public class RestDemoController {
     @ApiOperation(value="get 请求", notes="测试get请求")
     @ApiImplicitParam(name="param", value="参数")
     @GetMapping("getDemo")
-    public ResultMap doGet(Integer param) {
+    public ResultObject doGet(Integer param) {
         logger.info("getDemo: " + param);
-        return ResultMap.success();
+        return ResultObject.success();
     }
 
     @ApiOperation(value="post 请求", notes="测试post请求")
@@ -31,15 +32,15 @@ public class RestDemoController {
           @ApiImplicitParam(name="param2", value="参数2")
     })
     @PostMapping("postDemo")
-    public ResultMap doPost(@RequestParam Integer param1,
+    public ResultObject doPost(@RequestParam Integer param1,
                             @RequestParam Integer param2) {
         logger.info("getDemo: " + param1 + " " + param2);
-        return ResultMap.success();
+        return ResultObject.success();
     }
 
     @ApiIgnore
     @GetMapping("ingnore")
-    public ResultMap doIgnore() {
-        return ResultMap.success();
+    public ResultObject doIgnore() {
+        return ResultObject.success();
     }
 }

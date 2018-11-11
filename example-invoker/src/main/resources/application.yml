@@ -16,7 +16,7 @@ spring:
       name: dev
       password: dev
   datasource:
-    url: jdbc:mysql://119.29.94.246:3306/hbn_demo?characterEncoding=utf8
+    url: jdbc:mysql://119.29.94.246:3306/test_db?characterEncoding=utf8
     username: dev
     password: dev
     driverClassName: com.mysql.cj.jdbc.Driver
@@ -33,15 +33,18 @@ spring:
         persistence:
           validation:
             mode: auto
+  devtools:
+    restart:
+      enabled: false
 
 server:
   port: 8889
   servlet:
-    context-path: /example_invoker
+    context-path: /
 
 eureka:
   instance:
-    hostname: 127.0.0.1
+    hostname: example-invoker
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/eureka/
+      defaultZone: http://slave1:8761/eureka/,http://slave2:8762/eureka/

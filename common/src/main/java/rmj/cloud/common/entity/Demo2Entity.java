@@ -1,4 +1,4 @@
-package rmj.cloud.invoker.domain;
+package rmj.cloud.common.entity;
 
 @Entity
 @Table(name = "demo2_entity")

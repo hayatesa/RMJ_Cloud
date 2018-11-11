@@ -1,4 +1,4 @@
-package rmj.cloud.invoker.domain;
+package rmj.cloud.common.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedBy;

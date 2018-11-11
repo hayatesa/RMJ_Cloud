@@ -8,8 +8,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import rmj.cloud.common.entity.DemoEntity;
+import rmj.cloud.common.util.ResultObject;
 import rmj.cloud.invoker.service.IDemoService;
-import rmj.cloud.invoker.util.ResultMap;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/invoker", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -24,8 +27,8 @@ public class DemoInvokerController {
 
     @ApiOperation(value="分布式调用", notes="分布式调用")
     @GetMapping("outerService")
-    public ResultMap outerService() {
-        return restTemplate.getForObject("http://example-service/api/demoEntity/all", ResultMap.class);
+    public ResultObject<List<DemoEntity>> outerService() {
+        return restTemplate.getForObject("http://example-service/api/demoEntity/all", ResultObject.class);
     }
 
 }

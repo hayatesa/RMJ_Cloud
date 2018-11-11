@@ -1,7 +1,7 @@
 package rmj.cloud.provider.service;
 
 
-import rmj.cloud.provider.domain.DemoEntity;
+import rmj.cloud.common.entity.DemoEntity;;
 
 import java.util.List;
 
