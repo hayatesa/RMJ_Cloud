@@ -25,7 +25,7 @@ public class DemoInvokerController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @ApiOperation(value="分布式调用", notes="分布式调用")
+    @ApiOperation(value = "分布式调用", notes = "分布式调用")
     @GetMapping("outerService")
     public ResultObject<List<DemoEntity>> outerService() {
         return restTemplate.getForObject("http://example-service/api/demoEntity/all", ResultObject.class);

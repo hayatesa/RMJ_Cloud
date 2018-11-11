@@ -18,9 +18,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>rmj.cloud</groupId>
+            <groupId>rmj.cloud.example</groupId>
             <artifactId>common</artifactId>
-            <version>1.0.0.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

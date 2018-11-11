@@ -9,10 +9,10 @@ public class DemoEntity extends BaseEntity {
     @Column(name = "d_name", columnDefinition = "varchar(64) COMMENT '名称'")
     private String dName;
 
-    @Column(name = "num", columnDefinition="int COMMENT 'int字段'")
+    @Column(name = "num", columnDefinition = "int COMMENT 'int字段'")
     private Integer num;
 
-    @Column(name = "status", columnDefinition="tinyint COMMENT 'byte字段'")
+    @Column(name = "status", columnDefinition = "tinyint COMMENT 'byte字段'")
     private Byte status;
 
     public String getdName() {

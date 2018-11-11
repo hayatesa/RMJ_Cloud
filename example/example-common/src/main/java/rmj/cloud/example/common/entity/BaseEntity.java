@@ -21,20 +21,20 @@ public class BaseEntity implements Serializable {
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    @Column(name = "id", length = 32, columnDefinition="varchar(32) COMMENT '唯一标识'")
+    @Column(name = "id", length = 32, columnDefinition = "varchar(32) COMMENT '唯一标识'")
     protected String id;
 
     /**
      * 备注
      */
-    @Column(name = "remarks", length = 255, columnDefinition="varchar(255) COMMENT '备注'")
+    @Column(name = "remarks", length = 255, columnDefinition = "varchar(255) COMMENT '备注'")
     protected String remarks;
 
     /**
      * 创建者
      */
     @CreatedBy
-    @Column(name = "create_by", length = 64, columnDefinition="varchar(64) COMMENT '创建者'")
+    @Column(name = "create_by", length = 64, columnDefinition = "varchar(64) COMMENT '创建者'")
     protected String createBy;
 
     /**
@@ -42,14 +42,14 @@ public class BaseEntity implements Serializable {
      */
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "gmt_created", columnDefinition="datetime COMMENT '创建时间'")
+    @Column(name = "gmt_created", columnDefinition = "datetime COMMENT '创建时间'")
     protected Date gmtCreated;
 
     /**
      * 更新者
      */
     @LastModifiedBy
-    @Column(name = "update_by", length = 64, columnDefinition="varchar(64) COMMENT '更新者'")
+    @Column(name = "update_by", length = 64, columnDefinition = "varchar(64) COMMENT '更新者'")
     protected String updateBy;
 
     /**
@@ -57,20 +57,20 @@ public class BaseEntity implements Serializable {
      */
     @LastModifiedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "gmt_modified", columnDefinition="datetime COMMENT '更新时间'")
+    @Column(name = "gmt_modified", columnDefinition = "datetime COMMENT '更新时间'")
     protected Date gmtModified;
 
     /**
      * 删除标识（0：未删除；1：已删除；）
      */
-    @Column(name = "id_deleted", columnDefinition="bit(1) COMMENT '删除标识（0：未删除；1：已删除；）'")
+    @Column(name = "id_deleted", columnDefinition = "bit(1) COMMENT '删除标识（0：未删除；1：已删除；）'")
     protected boolean isDeleted;
 
     /**
      * 数据版本号（更新或删除数据时使用乐观锁机制）
      */
     @Version
-    @Column(name = "version", columnDefinition="int(11) COMMENT '数据版本号（更新或删除数据时使用乐观锁机制）'")
+    @Column(name = "version", columnDefinition = "int(11) COMMENT '数据版本号（更新或删除数据时使用乐观锁机制）'")
     protected int version;
 
     @Transient

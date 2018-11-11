@@ -31,35 +31,35 @@ public class ResultObject<T> implements Serializable {
         this.data = data;
     }
 
-    public static ResultObject success() {
+    public static <T> ResultObject<T> success() {
         return success(DEFAULT_SUCCESS_MESSAGE, null);
     }
 
-    public static ResultObject success(String message) {
+    public static <T> ResultObject<T> success(String message) {
         return success(message, null);
     }
 
-    public static <T> ResultObject success(T data) {
+    public static <T> ResultObject<T> success(T data) {
         return success(DEFAULT_SUCCESS_MESSAGE, null);
     }
 
-    public static <T> ResultObject success(String message, T data) {
+    public static <T> ResultObject<T> success(String message, T data) {
         return new ResultObject(SUCCESS_CODE, message, data);
     };
 
-    public static ResultObject failure() {
+    public static <T> ResultObject<T> failure() {
         return failure(DEFAULT_FAILURE_MESSAGE, null);
     }
 
-    public static ResultObject failure(String message) {
+    public static <T> ResultObject<T> failure(String message) {
         return failure(message, null);
     }
 
-    public static <T> ResultObject failure(T data) {
+    public static <T> ResultObject<T> failure(T data) {
         return failure(DEFAULT_FAILURE_MESSAGE, null);
     }
 
-    public static <T> ResultObject failure(String message, T data) {
+    public static <T> ResultObject<T> failure(String message, T data) {
         return new ResultObject(FAILURE_CODE, message, data);
     };
 

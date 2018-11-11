@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EntityScan(basePackages="rmj.cloud.invoker.domain")
-@EnableJpaRepositories(basePackages= "rmj.cloud.invoker.repository")
+@EntityScan(basePackages = "rmj.cloud.invoker.domain")
+@EnableJpaRepositories(basePackages = "rmj.cloud.invoker.repository")
 @EnableTransactionManagement
 public class HibernateJpaConfig {
 

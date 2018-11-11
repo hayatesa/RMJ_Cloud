@@ -20,9 +20,9 @@ public class FastJsonConverterConfig implements WebMvcConfigurer {
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         Iterator<HttpMessageConverter<?>> iterator = converters.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             HttpMessageConverter<?> converter = iterator.next();
-            if(converter instanceof MappingJackson2HttpMessageConverter){
+            if (converter instanceof MappingJackson2HttpMessageConverter) {
                 iterator.remove();
             }
         }

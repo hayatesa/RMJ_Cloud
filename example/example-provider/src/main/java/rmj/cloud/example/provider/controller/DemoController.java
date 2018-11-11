@@ -29,44 +29,44 @@ public class DemoController {
         this.demoService = demoService;
     }
 
-    @ApiOperation(value="根据名称查找实体", notes="根据名称查找实体")
-    @ApiImplicitParam(name="name", value="名称")
+    @ApiOperation(value = "根据名称查找实体", notes = "根据名称查找实体")
+    @ApiImplicitParam(name = "name", value = "名称")
     @GetMapping("findByName")
     public ResultObject<List<DemoEntity>> findByName(@RequestParam("name") String name) {
         return ResultObject.success(demoService.findByName(name));
     }
 
-    @ApiOperation(value="添加实体", notes="添加实体")
-    @ApiImplicitParam(name="name", value="名称")
+    @ApiOperation(value = "添加实体", notes = "添加实体")
+    @ApiImplicitParam(name = "name", value = "名称")
     @GetMapping("add")
     public ResultObject add() {
         return ResultObject.success();
     }
 
-    @ApiOperation(value="保存实体", notes="保存实体")
-    @ApiImplicitParam(name="id", value="ID", required = false)
+    @ApiOperation(value = "保存实体", notes = "保存实体")
+    @ApiImplicitParam(name = "id", value = "ID", required = false)
     @GetMapping("save")
     public ResultObject save(String id) {
         DemoEntity e = new DemoEntity();
-        if(!StringUtils.isEmpty(id)) {
+        if (!StringUtils.isEmpty(id)) {
             e.setId(id);
         }
-        e.setdName("add"+new Date().getTime());
-        e.setStatus((byte)1);
+        e.setdName("add" + new Date().getTime());
+        e.setStatus((byte) 1);
         e.setNum(1);
         e.setDeleted(false);
         demoService.save(e);
         return ResultObject.success();
     }
 
-    @ApiOperation(value="查询所有", notes="查询所有")
+    @ApiOperation(value = "查询所有", notes = "查询所有")
     @GetMapping("all")
     public ResultObject findAll() {
         return ResultObject.success(demoService.findAll());
     }
 
-    @ApiOperation(value="Set Status to 2", notes="Set Status to 2")
-    @ApiImplicitParam(name="id", value="ID")
+    @ApiOperation(value = "Set Status to 2", notes = "Set Status to 2")
+    @ApiImplicitParam(name = "id", value = "ID")
     @GetMapping("status2")
     public ResultObject updateStatusById(String id) {
         return ResultObject.success(demoService.findAll());

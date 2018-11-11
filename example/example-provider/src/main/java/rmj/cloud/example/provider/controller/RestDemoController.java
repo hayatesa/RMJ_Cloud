@@ -16,24 +16,24 @@ import springfox.documentation.annotations.ApiIgnore;
 @Api("RestDemo api")
 public class RestDemoController {
 
-    private static final Logger logger= LoggerFactory.getLogger(RestDemoController.class);
+    private static final Logger logger = LoggerFactory.getLogger(RestDemoController.class);
 
-    @ApiOperation(value="get 请求", notes="测试get请求")
-    @ApiImplicitParam(name="param", value="参数")
+    @ApiOperation(value = "get 请求", notes = "测试get请求")
+    @ApiImplicitParam(name = "param", value = "参数")
     @GetMapping("getDemo")
     public ResultObject doGet(Integer param) {
         logger.info("getDemo: " + param);
         return ResultObject.success();
     }
 
-    @ApiOperation(value="post 请求", notes="测试post请求")
+    @ApiOperation(value = "post 请求", notes = "测试post请求")
     @ApiImplicitParams({
-          @ApiImplicitParam(name="param1", value="参数1"),
-          @ApiImplicitParam(name="param2", value="参数2")
+            @ApiImplicitParam(name = "param1", value = "参数1"),
+            @ApiImplicitParam(name = "param2", value = "参数2")
     })
     @PostMapping("postDemo")
     public ResultObject doPost(@RequestParam Integer param1,
-                            @RequestParam Integer param2) {
+                               @RequestParam Integer param2) {
         logger.info("getDemo: " + param1 + " " + param2);
         return ResultObject.success();
     }
