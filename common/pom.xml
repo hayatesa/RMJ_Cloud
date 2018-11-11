@@ -16,15 +16,4 @@
         <version>1.0.0.RELEASE</version>
     </parent>
 
-    <modules>
-        <module>../example-invoker</module>
-        <module>../example-provider</module>
-        <module>../service-discovery-eureka</module>
-        <module>../service-discovery-zookeeper</module>
-    </modules>
-
-
-
-
-
 </project>
