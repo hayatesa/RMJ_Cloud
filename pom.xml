@@ -17,10 +17,12 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.M1</spring-cloud.version>
 
+        <commons-io.version>2.6</commons-io.version>
         <commons-lang3.version>3.8</commons-lang3.version>
         <druid.version>1.1.10</druid.version>
         <fast-json.version>1.2.49</fast-json.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
+        <jedis.version>2.9.0</jedis.version>
         <swagger.version>2.9.2</swagger.version>
     </properties>
 
@@ -38,6 +40,11 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -112,6 +119,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
         </dependency>
     </dependencies>
 
